@@ -5,135 +5,78 @@
 // alert("You get... NOTHING!!! You lose! GOOD DAY, SIR!\nYour score was "+score+" and you needed to get "+randNum+".");
 // alert("Winner, Winner, Chicken Dinner!\nYour matched the score of "+score+".");
 
-var randNum = Math.floor(Math.random() * 120-19+1) + 19;
+var randNum = Math.floor(Math.random() * (120-19+1)) + 19;
 $("#rand-num").html(randNum);
 
-var red = Math.floor(Math.random() * 12) +  1;
-var blue = Math.floor(Math.random() * 12) +  1;
-var yellow = Math.floor(Math.random() * 12) +  1;
-var green = Math.floor(Math.random() * 12) +  1;
+var chest1 = Math.floor(Math.random() * 12) +  1;
+var chest2 = Math.floor(Math.random() * 12) +  1;
+var chest3 = Math.floor(Math.random() * 12) +  1;
+var chest4 = Math.floor(Math.random() * 12) +  1;
 
 var score=0, wins=0, losses=0;
 $("#score").html(score);
 $("#wins").html(wins);
 $("#losses").html(losses);
 
-$("#red").click(function() {
-  score+=red;
-  $("#score").html(score);
+function progress() {
+  var prog = (score/randNum)*100;
+  $("#pBar").html('<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="'+prog+'" aria-valuemin="0" aria-valuemax="100" style="width: '+prog+'%"></div>');
+}
+
+function check() {
   if(score>randNum) {
     losses++;
     $("#losses").html(losses);
     alert("You get... NOTHING!!! You lose! GOOD DAY, SIR!\nYour score was "+score+" and you needed to get "+randNum+".");
-    randNum = Math.floor(Math.random() * 120-19+1) + 19;
-    red = Math.floor(Math.random() * 12) +  1;
-    blue = Math.floor(Math.random() * 12) +  1;
-    yellow = Math.floor(Math.random() * 12) +  1;
-    green = Math.floor(Math.random() * 12) +  1;
-    score=0
+    randNum = Math.floor(Math.random() * (120-19+1)) + 19;
+    chest1 = Math.floor(Math.random() * 12) +  1;
+    chest2 = Math.floor(Math.random() * 12) +  1;
+    chest3 = Math.floor(Math.random() * 12) +  1;
+    chest4 = Math.floor(Math.random() * 12) +  1;
+    score=0;
+    progress();
     $("#score").html(score);
     $("#rand-num").html(randNum);
   } else if(score==randNum) {
     wins++;
     $("#wins").html(wins);
     alert("Winner, Winner, Chicken Dinner!\nYour matched the score of "+score+".");
-    randNum = Math.floor(Math.random() * 120-19+1) + 19;
-    red = Math.floor(Math.random() * 12) +  1;
-    blue = Math.floor(Math.random() * 12) +  1;
-    yellow = Math.floor(Math.random() * 12) +  1;
-    green = Math.floor(Math.random() * 12) +  1;
-    score=0
+    randNum = Math.floor(Math.random() * (120-19+1)) + 19;
+    chest1 = Math.floor(Math.random() * 12) +  1;
+    chest2 = Math.floor(Math.random() * 12) +  1;
+    chest3 = Math.floor(Math.random() * 12) +  1;
+    chest4 = Math.floor(Math.random() * 12) +  1;
+    score=0;
+    progress();
     $("#score").html(score);
     $("#rand-num").html(randNum);
   }
+}
+
+$("#chest1").click(function() {
+  score+=chest1;
+  $("#score").html(score);
+  progress();
+  check();
 });
 
-$("#blue").click(function() {
-  score+=blue;
+$("#chest2").click(function() {
+  score+=chest2;
   $("#score").html(score);
-  if(score>randNum) {
-    losses++;
-    $("#losses").html(losses);
-    alert("You get... NOTHING!!! You lose! GOOD DAY, SIR!\nYour score was "+score+" and you needed to get "+randNum+".");
-    randNum = Math.floor(Math.random() * 120-19+1) + 19;
-    red = Math.floor(Math.random() * 12) +  1;
-    blue = Math.floor(Math.random() * 12) +  1;
-    yellow = Math.floor(Math.random() * 12) +  1;
-    green = Math.floor(Math.random() * 12) +  1;
-    score=0;
-    $("#score").html(score);
-    $("#rand-num").html(randNum);
-  } else if(score==randNum) {
-    wins++;
-    $("#wins").html(wins);
-    alert("Winner, Winner, Chicken Dinner!\nYour matched the score of "+score+".");
-    randNum = Math.floor(Math.random() * 120-19+1) + 19;
-    red = Math.floor(Math.random() * 12) +  1;
-    blue = Math.floor(Math.random() * 12) +  1;
-    yellow = Math.floor(Math.random() * 12) +  1;
-    green = Math.floor(Math.random() * 12) +  1;
-    score=0;
-    $("#score").html(score);
-    $("#rand-num").html(randNum);
-  }
+  progress();
+  check();
 });
 
-$("#yellow").click(function() {
-  score+=yellow;
+$("#chest3").click(function() {
+  score+=chest3;
   $("#score").html(score);
-  if(score>randNum) {
-    losses++;
-    $("#losses").html(losses);
-    alert("You get... NOTHING!!! You lose! GOOD DAY, SIR!\nYour score was "+score+" and you needed to get "+randNum+".");
-    randNum = Math.floor(Math.random() * 120-19+1) + 19;
-    red = Math.floor(Math.random() * 12) +  1;
-    blue = Math.floor(Math.random() * 12) +  1;
-    yellow = Math.floor(Math.random() * 12) +  1;
-    green = Math.floor(Math.random() * 12) +  1;
-    score=0;
-    $("#score").html(score);
-    $("#rand-num").html(randNum);
-  } else if(score==randNum) {
-    wins++;
-    $("#wins").html(wins);
-    alert("Winner, Winner, Chicken Dinner!\nYour matched the score of "+score+".");
-    randNum = Math.floor(Math.random() * 120-19+1) + 19;
-    red = Math.floor(Math.random() * 12) +  1;
-    blue = Math.floor(Math.random() * 12) +  1;
-    yellow = Math.floor(Math.random() * 12) +  1;
-    green = Math.floor(Math.random() * 12) +  1;
-    score=0;
-    $("#score").html(score);
-    $("#rand-num").html(randNum);
-  }
+  progress();
+  check();
 });
 
-$("#// green").click(function() {
-  score+=green;
+$("#chest4").click(function() {
+  score+=chest4;
   $("#score").html(score);
-  if(score>randNum) {
-    losses++;
-    $("#losses").html(losses);
-    alert("You get... NOTHING!!! You lose! GOOD DAY, SIR!\nYour score was "+score+" and you needed to get "+randNum+".");
-    randNum = Math.floor(Math.random() * 120-19+1) + 19;
-    red = Math.floor(Math.random() * 12) +  1;
-    blue = Math.floor(Math.random() * 12) +  1;
-    yellow = Math.floor(Math.random() * 12) +  1;
-    green = Math.floor(Math.random() * 12) +  1;
-    score=0;
-    $("#score").html(score);
-    $("#rand-num").html(randNum);
-  } else if(score==randNum) {
-    wins++;
-    $("#wins").html(wins);
-    alert("Winner, Winner, Chicken Dinner!\nYour matched the score of "+score+".");
-    randNum = Math.floor(Math.random() * 120-19+1) + 19;
-    red = Math.floor(Math.random() * 12) +  1;
-    blue = Math.floor(Math.random() * 12) +  1;
-    yellow = Math.floor(Math.random() * 12) +  1;
-    green = Math.floor(Math.random() * 12) +  1;
-    score=0;
-    $("#score").html(score);
-    $("#rand-num").html(randNum);
-  }
+  progress();
+  check();
 });

@@ -1,17 +1,35 @@
 /* CSS files add styling rules to your content */
+@font-face {
+  font-family: 'treasure_map_deadhandregular';
+  src: url('treamd-webfont.woff2') format('woff2'),
+       url('treamd-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 
-body {
-  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
-  margin: 2em;
 }
 
-h1 {
-  font-style: italic;
-  color: #373fff;
+body {
+background-image: url("../images/arches.png");
+}
+
+.tmFont {
+  font-family: 'treasure_map_deadhandregular', Arial, sans-serif;
+  margin-top: 40px;
+}
+
+.nFont {
+  font-family: 'Nanum Brush Script', cursive;
 }
 
 img {
-  margin: 10px;
-  width: 100px;
-  height: 100px;
+  margin: 15px;
+  width: 260px;
+  height: 200px;
+  border: 5px tan solid;
+}
+
+.headImages {
+  width:200px;
+  height: 125px;
+  border: none;
 }
